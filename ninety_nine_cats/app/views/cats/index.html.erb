@@ -1,0 +1,10 @@
+<h1>Meow Town</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li>
+      <%= cat.name %>, <%= cat.age %>
+      <a href="<%= cat_url(cat) %>"> Show cat! </a>
+    </li>
+  <% end %>
+</ul>
