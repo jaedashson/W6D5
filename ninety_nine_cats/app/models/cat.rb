@@ -4,8 +4,10 @@ require 'action_view'
 class Cat < ApplicationRecord
   include ActionView::Helpers::DateHelper
 
+  COLORS = %w(black sepia white orange slate)
+
   validates :birth_date, :name, :description, presence: true
-  validates :color, inclusion: { in: %w(black sepia white orange slate) }
+  validates :color, inclusion: { in: COLORS }
   validates :sex, inclusion: { in: %w(M F) }
 
   # How to calculate age?
