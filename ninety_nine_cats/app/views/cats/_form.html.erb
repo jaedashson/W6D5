@@ -1,9 +1,9 @@
 <% if edit == true %>
   <% action_url = cat_url(cat) %>
-  <% submit_val = "Save Edits"%>
+  <% submit_val = "Save edits"%>
 <% else %>
-  <%= action_url = cats_url %>
-  <% submit_val = "Add Cat"%>
+  <% action_url = cats_url %>
+  <% submit_val = "Add cat"%>
 <% end %>
 
 <form action= "<%= action_url %>" method="post" style="background: mediumspringgreen;">
