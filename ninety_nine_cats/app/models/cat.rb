@@ -4,7 +4,7 @@ require 'action_view'
 class Cat < ApplicationRecord
   include ActionView::Helpers::DateHelper
 
-  COLORS = %w(black sepia white orange slate)
+  COLORS = %w(sepia white orange slate black)
 
   validates :birth_date, :name, :description, presence: true
   validates :color, inclusion: { in: COLORS }

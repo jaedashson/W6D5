@@ -4,6 +4,7 @@
 <% else %>
   <%= action_url = cats_url %>
   <% submit_val = "Add Cat"%>
+<% end %>
 
 <form action= "<%= action_url %>" method="post" style="background: mediumspringgreen;">
   <% if edit %>
@@ -23,10 +24,11 @@
   <br>
 
   <select name="cat[color]">
-    <option disabled selected>select color</option>
+    <option disabled <%= edit == true ? "" : "selected" %>>select color</option>
 
     <% Cat::COLORS.each do |color| %>
-      <option value = "<%= color %>"> <% cat.color == color ? "selected" : "" %><%= color %></option>
+      <%# debugger %>
+      <option value="<%= color %>" <%= cat.color == color ? "selected" : "" %>><%= color %></option>
     <% end %>
   </select>
 
